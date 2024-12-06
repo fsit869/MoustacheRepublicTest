@@ -1,0 +1,17 @@
+.text {
+    color: var(--mantine-color-gray-6);
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    text-align: right;
+}
+
+.button:hover {
+    background-color: var(--mantine-color-gray-2);  /* Change this to the color you want */
+}
