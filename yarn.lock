@@ -4755,6 +4755,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jotai@npm:^2.10.3":
+  version: 2.10.3
+  resolution: "jotai@npm:2.10.3"
+  peerDependencies:
+    "@types/react": ">=17.0.0"
+    react: ">=17.0.0"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+    react:
+      optional: true
+  checksum: 10c0/64f6536aaa91f77dacd8d9714fb846f254bfed6e5354b3005375433d72844f3ae1d6d893ee4dd423d5bddd109d393dd338e562da914605b31190989a3d47db35
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0, js-tokens@npm:^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -5122,6 +5137,7 @@ __metadata:
     eslint-plugin-jsx-a11y: "npm:^6.10.2"
     eslint-plugin-react: "npm:^7.37.2"
     identity-obj-proxy: "npm:^3.0.0"
+    jotai: "npm:^2.10.3"
     jsdom: "npm:^25.0.1"
     postcss: "npm:^8.4.49"
     postcss-preset-mantine: "npm:1.17.0"

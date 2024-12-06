@@ -18,12 +18,15 @@ import {Product} from "@/models/Product";
 import {fetchProduct} from "@/api/Product";
 import { notifications } from '@mantine/notifications';
 import { IconCheck } from '@tabler/icons-react';
+import {addToCartAtom} from "@/atoms/cartAtom";
+import {useAtom} from "jotai";
 
 export function ProductPage() {
 
   const [product, setProduct] = useState<Product>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [, addCart] = useAtom(addToCartAtom);
 
   useEffect(() => {
     const getData = async () => {
@@ -46,8 +49,14 @@ export function ProductPage() {
       title: 'Item Added',
       message: 'You can continue shopping'
     })
-  }
 
+    addCart({
+      id: product.id,
+      productId: product.id,
+      quantity: 1,
+      size: product.sizeOptions[0]
+    })
+  }
 
   if (loading) {
     return (
