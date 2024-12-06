@@ -63,7 +63,7 @@ export function ProductPage() {
           <Center>
             <Image
               className={classes.productImage}
-              src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png"
+              src="src/pages/ProductPage/tempPhoto.jpg"
             />
           </Center>
         </Grid.Col>
