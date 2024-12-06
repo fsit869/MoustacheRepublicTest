@@ -1,0 +1,14 @@
+.headerBar {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-color: transparent;
+    max-width: 80%;
+}
+
+.container {
+    background-color: var(--mantine-color-gray-0);
+    padding: 5px;
+}
+
