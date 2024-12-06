@@ -17,7 +17,7 @@ export default function SizeOptions(props: sizeOptionProps) {
       <Flex
         gap="xs"
         justify="flex-start"
-        align="flex-start"
+        align="stretch"
         direction="row"
         wrap="wrap"
       >

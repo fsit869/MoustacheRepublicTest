@@ -25,3 +25,16 @@
     border-top: solid 1px var(--mantine-color-gray-1);
     border-bottom: solid 1px var(--mantine-color-gray-1);
 }
+
+.addToCart {
+    width: 150px;
+    border-radius: 0px;
+    background-color: transparent;
+    color: black;
+    border: black solid 2px ;
+}
+
+.addToCart:hover {
+    background-color: var(--mantine-color-gray-7);
+}
+

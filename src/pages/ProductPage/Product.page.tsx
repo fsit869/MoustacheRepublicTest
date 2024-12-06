@@ -16,6 +16,9 @@ import SizeOptions from "@/components/SizeOptions/SizeOptions";
 import {useEffect, useState} from "react";
 import {Product} from "@/models/Product";
 import {fetchProduct} from "@/api/Product";
+import { notifications } from '@mantine/notifications';
+import { IconCheck } from '@tabler/icons-react';
+
 export function ProductPage() {
 
   const [product, setProduct] = useState<Product>(null);
@@ -37,6 +40,14 @@ export function ProductPage() {
     }
     getData()
   }, []);
+
+  function onAddToCartButton() {
+    notifications.show({
+      title: 'Item Added',
+      message: 'You can continue shopping'
+    })
+  }
+
 
   if (loading) {
     return (
@@ -74,7 +85,13 @@ export function ProductPage() {
             <Text size="md" className={classes.priceText} fw={500}>${product.price.toFixed(2)}</Text>
             <Text size="sm" c="gray.6">{product.description}</Text>
             <SizeOptions sizes={product.sizeOptions}/>
+            <Button className={classes.addToCart} onClick={() =>
+              onAddToCartButton()
+            }>
+              ADD TO CART
+            </Button>
           </Stack>
+
         </Grid.Col>
       </Grid>
     </>
