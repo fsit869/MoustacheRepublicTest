@@ -12,6 +12,7 @@ import {
   useMantineTheme
 } from "@mantine/core";
 import classes from './Product.module.css';
+import SizeOptions from "@/components/SizeOptions/SizeOptions";
 export function ProductPage() {
 
   return (
@@ -33,6 +34,7 @@ export function ProductPage() {
             <Text size="xl">Product Title</Text>
             <Text size="md" className={classes.priceText} fw={500}>Price</Text>
             <Text size="sm" c="gray.6">Product Description</Text>
+            <SizeOptions sizes={[]}/>
           </Stack>
         </Grid.Col>
       </Grid>
