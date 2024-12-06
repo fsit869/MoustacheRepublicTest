@@ -1,0 +1,27 @@
+.root {
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*gap: var(--mantine-space-xs);*/
+}
+
+.leftColumn {
+}
+
+.rightColumn {
+}
+
+.productImage {
+    width: 400px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.priceText {
+    border-top: solid 1px var(--mantine-color-gray-1);
+    border-bottom: solid 1px var(--mantine-color-gray-1);
+}
