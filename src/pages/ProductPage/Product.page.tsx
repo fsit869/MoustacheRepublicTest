@@ -70,9 +70,9 @@ export function ProductPage() {
 
         <Grid.Col span={6} className={classes.rightColumn}>
           <Stack>
-            <Text size="xl">Product Title</Text>
-            <Text size="md" className={classes.priceText} fw={500}>Price</Text>
-            <Text size="sm" c="gray.6">Product Description</Text>
+            <Text size="xl">{product.title}</Text>
+            <Text size="md" className={classes.priceText} fw={500}>${product.price.toFixed(2)}</Text>
+            <Text size="sm" c="gray.6">{product.description}</Text>
             <SizeOptions sizes={product.sizeOptions}/>
           </Stack>
         </Grid.Col>
