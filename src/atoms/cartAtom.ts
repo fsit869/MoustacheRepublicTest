@@ -3,7 +3,7 @@ import {CartItem} from "@/models/CartItem";
 import SizeOption from "@/models/SizeOption";
 
 export const cartAtom = atom<CartItem[]>([]);
-export const cartTotal = atom(0)
+export const cartTotalAtom = atom(0)
 
 export const addToCartAtom = atom(
   null,
@@ -22,7 +22,7 @@ export const addToCartAtom = atom(
     }
 
     console.log(currentCart)
-    set(cartTotal, get(cartTotal)+1)
+    set(cartTotalAtom, get(cartTotalAtom)+1)
     set(cartAtom, currentCart);
   }
 );
