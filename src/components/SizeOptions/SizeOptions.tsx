@@ -1,9 +1,9 @@
 import SizeOption from "@/models/SizeOption";
-import {useState} from "react";
-import {RadioGroup, Radio, ButtonGroup, Button, Text, Flex} from '@mantine/core';
+import {Button, ButtonGroup, Flex, Text} from '@mantine/core';
 import classes from './SizeOption.module.css'
+
 interface sizeOptionProps {
-  sizes: SizeOption[]
+  sizes: SizeOption[] | null
   sizeState: string,
   setSizeState : any
 }
@@ -13,6 +13,26 @@ export default function SizeOptions(props: sizeOptionProps) {
   const onButtonClick = (newValue) => {
     props.setSizeState(newValue);
   };
+
+  const getSizes = () => {
+    if (props.sizes == null || props.sizes.length == 0) {
+      return <Text>No sizes available</Text>
+    }
+
+    return props.sizes.map((size) => {
+      return <Button
+        className={classes.button}
+        key={size.id}
+        value={size.label}
+        active={props.sizeState == size.label}
+        onClick={() => onButtonClick(size.label)}
+      >
+        {size.label}
+      </Button>
+    })
+  }
+
+
   return (
     <>
       <Flex
@@ -27,17 +47,7 @@ export default function SizeOptions(props: sizeOptionProps) {
       </Flex>
 
       <ButtonGroup className={classes.buttonGroup}>
-        {props.sizes.map((size) => {
-          return <Button
-            className={classes.button}
-            key={size.id}
-            value={size.label}
-            active={props.sizeState == size.label}
-            onClick={() => onButtonClick(size.label)}
-          >
-            {size.label}
-          </Button>
-        })}
+        {getSizes()}
       </ButtonGroup>
     </>
 

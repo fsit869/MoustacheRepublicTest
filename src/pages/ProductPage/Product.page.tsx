@@ -90,19 +90,30 @@ export function ProductPage() {
 
   return (
     <>
-      <Grid
+      <Flex
         className={classes.root}
+        wrap="wrap"
+        gap="md"
+        justify="space-between"
       >
-        <Grid.Col span={6} className={classes.leftColumn}>
+        <Flex
+          className={classes.leftColumn}
+          direction="column"
+          justify="center"
+          align="center"
+        >
           <Center>
             <Image
               className={classes.productImage}
               src="src/pages/ProductPage/tempPhoto.jpg"
             />
           </Center>
-        </Grid.Col>
+        </Flex>
 
-        <Grid.Col span={6} className={classes.rightColumn}>
+        <Flex
+          className={classes.rightColumn}
+          direction="column"
+        >
           <Stack>
             <Text size="xl">{product.title}</Text>
             <Text size="md" className={classes.priceText} fw={500}>${product.price.toFixed(2)}</Text>
@@ -115,8 +126,8 @@ export function ProductPage() {
             </Button>
           </Stack>
 
-        </Grid.Col>
-      </Grid>
+        </Flex>
+      </Flex>
     </>
     );
 }

@@ -9,9 +9,13 @@
 }
 
 .leftColumn {
+    flex: 1 1 300px;
+    max-width: 50%;
 }
 
 .rightColumn {
+    flex: 1 1 300px;
+    max-width: 50%;
 }
 
 .productImage {
