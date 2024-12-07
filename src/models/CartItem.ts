@@ -1,8 +1,7 @@
 import SizeOption from "@/models/SizeOption";
+import {Product} from "@/models/Product";
 
 export interface CartItem {
-  id: number,
-  productId: number,
   quantity: number,
-  size: SizeOption
+  product: Product
 }

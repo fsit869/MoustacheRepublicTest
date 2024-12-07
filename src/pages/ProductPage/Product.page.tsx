@@ -51,10 +51,11 @@ export function ProductPage() {
     })
 
     addCart({
-      id: product.id,
-      productId: product.id,
-      quantity: 1,
-      size: product.sizeOptions[0]
+      product: {
+        ...product,
+        sizeOptions: [product.sizeOptions[0]]
+      },
+      quantity: 1
     })
   }
 
