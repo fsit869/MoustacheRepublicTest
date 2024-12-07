@@ -15,6 +15,7 @@ import {fetchProduct} from "@/api/Product";
 import { notifications } from '@mantine/notifications';
 import {addToCartAtom} from "@/atoms/cartAtom";
 import {useAtom} from "jotai";
+import {CartItem} from "@/models/CartItem";
 
 export function ProductPage() {
 
@@ -55,11 +56,11 @@ export function ProductPage() {
       product: {
         ...product,
         sizeOptions: [
-          product.sizeOptions.find(size => size?.label === selectedSize) ?? null
+          product.sizeOptions.find(size => size?.label === selectedSize) || null
         ]
       },
       quantity: 1
-    })
+    } as CartItem)
 
     notifications.show({
       title: 'Item Added',
