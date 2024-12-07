@@ -1,15 +1,11 @@
 import {
-  AppShell,
   Text,
-  Burger,
   Button,
   Container,
   Flex,
   Image,
   Stack,
-  Grid,
   Center,
-  useMantineTheme
 } from "@mantine/core";
 import classes from './Product.module.css';
 import SizeOptions from "@/components/SizeOptions/SizeOptions";
@@ -17,7 +13,6 @@ import {useEffect, useState} from "react";
 import {Product} from "@/models/Product";
 import {fetchProduct} from "@/api/Product";
 import { notifications } from '@mantine/notifications';
-import { IconCheck } from '@tabler/icons-react';
 import {addToCartAtom} from "@/atoms/cartAtom";
 import {useAtom} from "jotai";
 

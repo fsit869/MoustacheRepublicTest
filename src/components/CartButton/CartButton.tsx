@@ -1,8 +1,7 @@
-import {useState} from "react";
-import {Button, Image, Menu, Text} from "@mantine/core";
+import {Button, Menu, Text} from "@mantine/core";
 import classes from "./CartButton.module.css";
 import { useAtom } from "jotai";
-import {cartAtom, cartTotal, cartTotalAtom} from "@/atoms/cartAtom";
+import {cartAtom, cartTotalAtom} from "@/atoms/cartAtom";
 import CartItem from "@/components/CartItem/CartItem";
 export default function CartButton() {
   const [cartItems, setCartItems] = useAtom(cartAtom);

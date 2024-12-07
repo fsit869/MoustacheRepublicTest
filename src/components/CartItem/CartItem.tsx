@@ -1,6 +1,5 @@
 import SizeOption from "@/models/SizeOption";
 import {Image, Menu, Text} from "@mantine/core";
-import classes from "./CartItem.module.css";
 
 interface CartItemProps {
   name: string;
