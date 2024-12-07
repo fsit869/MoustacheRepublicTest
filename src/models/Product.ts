@@ -6,5 +6,5 @@ export interface Product {
   description: string,
   price: number,
   imageURL: string,
-  sizeOptions: SizeOption[]
+  sizeOptions: (SizeOption | null)[]
 }

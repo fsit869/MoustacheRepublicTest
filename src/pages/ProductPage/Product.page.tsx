@@ -28,6 +28,8 @@ export function ProductPage() {
   const [error, setError] = useState(false);
   const [, addCart] = useAtom(addToCartAtom);
 
+  const [selectedSize, setSelectedSize] = useState(null);
+
   useEffect(() => {
     const getData = async () => {
       try {
@@ -45,17 +47,28 @@ export function ProductPage() {
   }, []);
 
   function onAddToCartButton() {
-    notifications.show({
-      title: 'Item Added',
-      message: 'You can continue shopping'
-    })
+
+    if (selectedSize === null) {
+      notifications.show({
+        title: 'Size not selected',
+        message: 'Please select a size'
+      })
+      return;
+    }
 
     addCart({
       product: {
         ...product,
-        sizeOptions: [product.sizeOptions[0]]
+        sizeOptions: [
+          product.sizeOptions.find(size => size?.label === selectedSize) ?? null
+        ]
       },
       quantity: 1
+    })
+
+    notifications.show({
+      title: 'Item Added',
+      message: 'You can continue shopping'
     })
   }
 
@@ -94,7 +107,7 @@ export function ProductPage() {
             <Text size="xl">{product.title}</Text>
             <Text size="md" className={classes.priceText} fw={500}>${product.price.toFixed(2)}</Text>
             <Text size="sm" c="gray.6">{product.description}</Text>
-            <SizeOptions sizes={product.sizeOptions}/>
+            <SizeOptions sizes={product.sizeOptions} setSizeState={setSelectedSize} sizeState={selectedSize}/>
             <Button className={classes.addToCart} onClick={() =>
               onAddToCartButton()
             }>
