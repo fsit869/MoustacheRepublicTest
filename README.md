@@ -1,4 +1,4 @@
-# Moustache Republic Developer Tests
+# Moustache Republic Developer Test
 
 ## Features
 - Typescript
@@ -6,6 +6,7 @@
 - Mantine styling library
 - Axios for API requests
 - Jotai for state management
+- React Router for routing
 
 ## Scripts
 `npm install` or `yarn` to install dependencies
